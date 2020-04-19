@@ -5,5 +5,5 @@
 4. 为了验证mnn可行性，我将后处理与预处理拆开，.mnn文件中包含模型输入（1，416，416，3），输出（"conv2d_10/BiasAdd","conv2d_13/BiasAdd"）,
 使用MNN验证工具无异常，但是使用时无报错，无结果。使用clock发现网络并没有正常运行。
 
-使用过程中，使用了tensorflow中tf.image.pad_to_bounding_box，freeze之后多了很多莫名的输入输出。转换成mnn之后报错，于是查看其实现过程，使用
+附：使用过程中，使用了tensorflow中tf.image.pad_to_bounding_box，freeze之后多了很多莫名的输入输出。转换成mnn之后报错，于是查看其实现过程，使用
 tf.pad代替，实现功能
